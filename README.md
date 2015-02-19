@@ -1,6 +1,10 @@
-# CommonsUpload
+# commons_upload
 
-TODO: Write a gem description
+This is a gem for uploading images to Wikimedia Commons.
+It uses the MediaWiki API and the mediawiki-api Ruby gem.
+It is currently intended for uploading auto-translated
+screenshots created using the screenshot gem, for documenting
+different MediaWiki features and extensions.
 
 ## Installation
 
