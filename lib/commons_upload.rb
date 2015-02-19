@@ -1,4 +1,4 @@
-require "commons_upload/version"
+require 'commons_upload/version'
 
 module CommonsUpload
   def self.license(language_code, file_name)
