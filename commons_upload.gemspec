@@ -8,8 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = CommonsUpload::VERSION
   spec.authors       = ['Vikas Yaligar', 'Željko Filipin', 'Amir E. Aharoni']
   spec.email         = ['amir.aharoni@mail.huji.ac.il']
-  spec.description   = %q{Upload images to Wikimedia Commons. This is intended for uploading auto-translated screenshots for MediaWiki documentation.}
-  spec.summary       = %q{Upload images to Wikimedia Commons.}
+  spec.description   = 'Upload images to Wikimedia Commons. '\
+    'This is intended for uploading auto-translated screenshots for MediaWiki documentation.'
+  spec.summary       = 'Upload images to Wikimedia Commons.'
   spec.homepage      = 'https://github.com/amire80/commons_upload'
   spec.license       = 'MIT'
 
