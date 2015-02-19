@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'commons_upload'
+
+CommonsUpload.images
