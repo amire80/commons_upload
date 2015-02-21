@@ -1,0 +1,13 @@
+inherit_from: .rubocop_todo.yml
+
+# The default is 15, which is too tight
+Metrics/AbcSize:
+  Max: 30
+
+# The default is 10, which is too tight
+Metrics/MethodLength:
+  Max: 20
+
+# The default is 80, and MediaWiki standard is 100
+Metrics/LineLength:
+  Max: 100

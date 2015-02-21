@@ -1,7 +1,6 @@
-require "commons_upload/version"
+require 'commons_upload/version'
 
 module CommonsUpload
-
   def self.license(language_code, file_name)
     require 'date'
     date = Date.today.to_s
@@ -41,5 +40,4 @@ module CommonsUpload
       image file_path, client
     end
   end
-
 end
