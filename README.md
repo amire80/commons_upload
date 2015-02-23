@@ -22,7 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run the upload, do
+```bundle exec upload```
 
 ## Contributing
 
