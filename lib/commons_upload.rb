@@ -1,9 +1,14 @@
 require 'commons_upload/version'
 
 module CommonsUpload
-  def self.license(language_code, file_name)
+  def self.license(file_name)
     require 'date'
+
     date = Date.today.to_s
+
+    category = ENV['LANGUAGE_SCREENSHOT_CATEGORY']
+    language_code = ENV['LANGUAGE_SCREENSHOT_CODE']
+
     "=={{int:filedesc}}==
 {{Information
 |description={{en|1=#{file_name}}}
@@ -18,13 +23,12 @@ module CommonsUpload
 =={{int:license-header}}==
 {{Wikipedia-screenshot}}
 
-[[Category:VisualEditor automatic screenshots/#{language_code}]]"
+[[Category:#{category}/#{language_code}]]"
   end
 
   def self.image(file_path, client)
-    language_code = ENV['LANGUAGE_SCREENSHOT_CODE']
     file_name = File.basename(file_path, '')
-    file_license = license(language_code, file_name)
+    file_license = license(file_name)
 
     client.upload_image(file_name, file_path, file_license, true)
     sleep 5 # Restriction in bot speed: https://commons.wikimedia.org/wiki/Commons:Bots#Bot_speed
