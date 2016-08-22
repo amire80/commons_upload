@@ -1,29 +1,30 @@
-require 'commons_upload/version'
-
 module CommonsUpload
   def self.license(file_name)
     require 'date'
-
     date = Date.today.to_s
 
-    category = ENV['LANGUAGE_SCREENSHOT_CATEGORY']
-    language_code = ENV['LANGUAGE_SCREENSHOT_CODE']
+    # file_name example: VisualEditor_category_item-en.png
+    # language_code is the portion of the string between dash (-) and dot (.)
+    # in this case it is: en
+    language_code = file_name.split('-')[1].split('.')[0]
 
-    "=={{int:filedesc}}==
-{{Information
-|description={{en|1=#{file_name}}}
-|date=#{date}
-|source=[[User:LanguageScreenshotBot|Automatically created by LanguageScreenshotBot]]
-|author=[[User:LanguageScreenshotBot|Automatically created by LanguageScreenshotBot]]
-|permission=
-|other_versions=
-|other_fields=
-}}
+    <<~eos
+      =={{int:filedesc}}==
+      {{Information
+      |description={{en|1=#{file_name}}}
+      |date=#{date}
+      |source=[[User:LanguageScreenshotBot|Automatically created by LanguageScreenshotBot]]
+      |author=[[User:LanguageScreenshotBot|Automatically created by LanguageScreenshotBot]]
+      |permission=
+      |other_versions=
+      |other_fields=
+      }}
 
-=={{int:license-header}}==
-{{Wikipedia-screenshot}}
+      =={{int:license-header}}==
+      {{Wikipedia-screenshot}}
 
-[[Category:#{category}/#{language_code}]]"
+      [[Category:VisualEditor-#{language_code}]]
+    eos
   end
 
   def self.image(file_path, client)
