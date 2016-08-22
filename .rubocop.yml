@@ -1,5 +1,9 @@
 inherit_from: .rubocop_todo.yml
 
+# Needed for ignoring leading whitespace in heredoc
+AllCops:
+  TargetRubyVersion: 2.3
+
 # The default is 15, which is too tight
 Metrics/AbcSize:
   Max: 30
