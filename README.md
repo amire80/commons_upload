@@ -23,7 +23,18 @@ Or install it yourself as:
 ## Usage
 
 To run the upload, do
-```bundle exec upload```
+
+    # optional, the default is ./screenshots
+    export LANGUAGE_SCREENSHOT_PATH=./screenshots
+
+    # testing:    https://commons.wikimedia.beta.wmflabs.org/w/api.php
+    # production: https://commons.wikimedia.org/w/api.php
+    export MEDIAWIKI_API_UPLOAD_URL=https://commons.wikimedia.beta.wmflabs.org/w/api.php
+
+    export MEDIAWIKI_USER=LanguageScreenshotBot
+    export MEDIAWIKI_PASSWORD=not-the-real-one
+
+    bundle exec upload
 
 ## Contributing
 
