@@ -31,8 +31,14 @@ EOS
     file_name = File.basename(file_path, '')
     file_license = license(file_name)
 
-    client.upload_image(file_name, file_path, file_license, true)
-    sleep 5 # Restriction in bot speed: https://commons.wikimedia.org/wiki/Commons:Bots#Bot_speed
+    begin
+      client.upload_image(file_name, file_path, file_license, true)
+    rescue MediawikiApi::ApiError => mwerr
+      raise mwerr if mwerr.code != 'fileexists-no-change'
+      puts 'File already uploaded.'
+    ensure
+      sleep 5 # Restriction in bot speed: https://commons.wikimedia.org/wiki/Commons:Bots#Bot_speed
+    end
   end
 
   def self.images
