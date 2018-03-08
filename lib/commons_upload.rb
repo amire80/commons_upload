@@ -44,9 +44,9 @@ module CommonsUpload
       return 'OK'
     rescue MediawikiApi::ApiError => mwerr
       raise mwerr if mwerr.code != 'fileexists-no-change'
-      edit(file_name, client) # if page exists, update it's content
       return 'OK (file already uploaded)'
     ensure
+      edit(file_name, client) # update page content
       sleep 5 # Restriction in bot speed: https://commons.wikimedia.org/wiki/Commons:Bots#Bot_speed
     end
   end
