@@ -1,4 +1,4 @@
-Copyright (c) 2014-2016 Vikas Yaligar, Željko Filipin and Amir E. Aharoni
+Copyright (c) 2014-2018 Vikas Yaligar, Željko Filipin and Amir E. Aharoni
 under the terms of The MIT License (MIT), as follows:
 
 This software consists of voluntary contributions made by many
