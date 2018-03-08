@@ -25,6 +25,8 @@ Or install it yourself as:
 To run the upload, do
 
     # optional, the default is ./screenshots
+    # file names have to be in this format VisualEditor_category_item-en.png
+    # language code is `en`, between `-` and `.`
     export LANGUAGE_SCREENSHOT_PATH=./screenshots
 
     # testing:    https://commons.wikimedia.beta.wmflabs.org/w/api.php
