@@ -1,5 +1,3 @@
-inherit_from: .rubocop_todo.yml
-
 # Needed for ignoring leading whitespace in heredoc
 AllCops:
   TargetRubyVersion: 2.3

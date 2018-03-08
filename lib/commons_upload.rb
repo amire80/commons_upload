@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Iterate over all images, create license, upload image by image
 module CommonsUpload
   def self.license(file_name)
