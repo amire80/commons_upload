@@ -2,6 +2,11 @@
 
 # Iterate over all images, create license, upload image by image
 module CommonsUpload
+  def self.edit(file_name, client)
+    page = "File:#{file_name}"
+    client.edit(title: page, text: license(file_name), summary: 'Update page text')
+  end
+
   def self.license(file_name)
     require 'date'
     date = Date.today.to_s
@@ -39,6 +44,7 @@ module CommonsUpload
       return 'OK'
     rescue MediawikiApi::ApiError => mwerr
       raise mwerr if mwerr.code != 'fileexists-no-change'
+      edit(file_name, client) # if page exists, update it's content
       return 'OK (file already uploaded)'
     ensure
       sleep 5 # Restriction in bot speed: https://commons.wikimedia.org/wiki/Commons:Bots#Bot_speed
