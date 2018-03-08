@@ -12,9 +12,3 @@
 Gemspec/RequiredRubyVersion:
   Exclude:
     - 'commons_upload.gemspec'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'commons_upload.gemspec'
