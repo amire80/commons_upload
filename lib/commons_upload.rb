@@ -40,7 +40,7 @@ module CommonsUpload
     file_license = license(file_name)
 
     begin
-      client.upload_image(file_name, file_path, file_license, true)
+      client.upload_image(file_name, file_path, 'Create page', true, file_license)
       return 'OK'
     rescue MediawikiApi::ApiError => mwerr
       raise mwerr if mwerr.code != 'fileexists-no-change'
