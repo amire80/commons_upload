@@ -41,8 +41,16 @@ EOS
     client = MediawikiApi::Client.new ENV['MEDIAWIKI_API_UPLOAD_URL']
     client.log_in ENV['MEDIAWIKI_USER'], ENV['MEDIAWIKI_PASSWORD']
     Dir["#{screenshot_directory}/*.png"].each do |file_path|
-      puts "Uploading #{file_path}"
-      image file_path, client
+      print "Uploading #{file_path} ... "
+      STDOUT.flush
+      begin
+        image file_path, client
+        puts 'OK'
+      rescue StandardError => e
+        puts 'FAILED'
+        raise e
+      end
+      STDOUT.flush
     end
   end
 end
