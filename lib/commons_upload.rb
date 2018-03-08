@@ -9,7 +9,7 @@ module CommonsUpload
     # in this case it is: en
     language_code = file_name.split('-')[1].split('.')[0]
 
-    <<EOS
+    <<LICENSE
 =={{int:filedesc}}==
 {{Information
 |description={{en|1=#{file_name}}}
@@ -25,7 +25,7 @@ module CommonsUpload
 {{Wikipedia-screenshot}}
 
 [[Category:VisualEditor-#{language_code}]]
-EOS
+LICENSE
   end
 
   def self.image(file_path, client)

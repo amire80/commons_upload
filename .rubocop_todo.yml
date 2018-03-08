@@ -13,10 +13,3 @@
 Layout/IndentHeredoc:
   Exclude:
     - 'lib/commons_upload.rb'
-
-# Offense count: 1
-# Configuration parameters: Blacklist.
-# Blacklist: END, (?-mix:EO[A-Z]{1})
-Naming/HeredocDelimiterNaming:
-  Exclude:
-    - 'lib/commons_upload.rb'
