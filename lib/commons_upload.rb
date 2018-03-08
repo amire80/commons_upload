@@ -36,9 +36,10 @@ module CommonsUpload
 
     begin
       client.upload_image(file_name, file_path, file_license, true)
+      return 'OK'
     rescue MediawikiApi::ApiError => mwerr
       raise mwerr if mwerr.code != 'fileexists-no-change'
-      puts 'File already uploaded.'
+      return 'OK (file already uploaded)'
     ensure
       sleep 5 # Restriction in bot speed: https://commons.wikimedia.org/wiki/Commons:Bots#Bot_speed
     end
@@ -53,8 +54,8 @@ module CommonsUpload
       print "Uploading #{file_path} ... "
       STDOUT.flush
       begin
-        image file_path, client
-        puts 'OK'
+        message = image file_path, client
+        puts message
       rescue StandardError => e
         puts 'FAILED'
         raise e
