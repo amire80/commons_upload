@@ -24,7 +24,7 @@ module CommonsUpload
       }}
 
       =={{int:license-header}}==
-      {{Wikipedia-screenshot}}
+      {{Wikimedia-screenshot}}
 
       [[Category:VisualEditor-#{language_code}]]
     LICENSE
