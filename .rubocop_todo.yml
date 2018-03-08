@@ -33,11 +33,3 @@ Style/Documentation:
 Style/Encoding:
   Exclude:
     - 'commons_upload.gemspec'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: use_perl_names, use_english_names
-Style/SpecialGlobalVars:
-  Exclude:
-    - 'commons_upload.gemspec'
