@@ -20,10 +20,3 @@ Layout/IndentHeredoc:
 Naming/HeredocDelimiterNaming:
   Exclude:
     - 'lib/commons_upload.rb'
-
-# Offense count: 1
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'lib/commons_upload.rb'
