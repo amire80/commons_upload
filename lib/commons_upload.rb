@@ -40,7 +40,9 @@ module CommonsUpload
     file_license = license(file_name)
 
     begin
-      client.upload_image(file_name, file_path, 'Upload new version of the file', true, file_license)
+      client.upload_image(
+        file_name, file_path, 'Upload new version of the file', true, file_license
+      )
       return 'OK'
     rescue MediawikiApi::ApiError => mwerr
       raise mwerr if mwerr.code != 'fileexists-no-change'
