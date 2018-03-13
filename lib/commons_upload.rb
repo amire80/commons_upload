@@ -16,7 +16,7 @@ module CommonsUpload
     # in this case it is: en
     language_code = file_name.split('-')[1].split('.')[0]
 
-    <<~LICENSE
+    <<LICENSE
       =={{int:filedesc}}==
       {{Information
       |description={{en|1=#{file_name}}}
@@ -32,7 +32,7 @@ module CommonsUpload
       {{Wikimedia-screenshot}}
 
       [[Category:VisualEditor-#{language_code}]]
-    LICENSE
+LICENSE
   end
 
   def self.image(file_path, client)
