@@ -1,6 +1,6 @@
 # Needed for ignoring leading whitespace in heredoc
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.1
 
 # The default is 15, which is too tight
 Metrics/AbcSize:
