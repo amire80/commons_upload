@@ -16,22 +16,22 @@ module CommonsUpload
     # in this case it is: en
     language_code = file_name.split('-')[1].split('.')[0]
 
-    <<LICENSE
-      =={{int:filedesc}}==
-      {{Information
-      |description={{en|1=#{file_name}}}
-      |date=#{date}
-      |source=[[User:LanguageScreenshotBot|Automatically created by LanguageScreenshotBot]]
-      |author=[[User:LanguageScreenshotBot|Automatically created by LanguageScreenshotBot]]
-      |permission=
-      |other_versions=
-      |other_fields=
-      }}
-
-      =={{int:license-header}}==
-      {{Wikimedia-screenshot}}
-
-      [[Category:VisualEditor-#{language_code}]]
+    <<LICENSE.gsub(/^\s+\|/, '')
+      |=={{int:filedesc}}==
+      |{{Information
+      ||description={{en|1=#{file_name}}}
+      ||date=#{date}
+      ||source=[[User:LanguageScreenshotBot|Automatically created by LanguageScreenshotBot]]
+      ||author=[[User:LanguageScreenshotBot|Automatically created by LanguageScreenshotBot]]
+      ||permission=
+      ||other_versions=
+      ||other_fields=
+      |}}
+      |
+      |=={{int:license-header}}==
+      |{{Wikimedia-screenshot}}
+      |
+      |[[Category:VisualEditor-#{language_code}]]
 LICENSE
   end
 
