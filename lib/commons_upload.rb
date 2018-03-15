@@ -45,8 +45,9 @@ LICENSE
       )
       return 'OK'
     rescue MediawikiApi::ApiError => mwerr
-      raise mwerr if mwerr.code != 'fileexists-no-change'
-      return 'OK (file already uploaded)'
+      return 'exists: fileexists-no-change' if mwerr.code == 'fileexists-no-change'
+      return 'exists: fileexists-shared-forbidden' if mwerr.code == 'fileexists-shared-forbidden'
+      return "error: #{mwerr}"
     ensure
       edit(file_name, client) # update page content
       sleep 5 # Restriction in bot speed: https://commons.wikimedia.org/wiki/Commons:Bots#Bot_speed
