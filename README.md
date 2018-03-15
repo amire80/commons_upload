@@ -1,5 +1,8 @@
 # commons_upload
 
+[![Build Status](https://travis-ci.org/amire80/commons_upload.svg?branch=master)](https://travis-ci.org/amire80/commons_upload)
+[![Gem Version](https://badge.fury.io/rb/commons_upload.svg)](https://badge.fury.io/rb/commons_upload)
+
 This is a gem for uploading images to Wikimedia Commons.
 It uses the MediaWiki API and the mediawiki-api Ruby gem.
 It is currently intended for uploading auto-translated
@@ -45,6 +48,3 @@ To run the upload, do
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
-[![Build Status](https://travis-ci.org/amire80/commons_upload.svg?branch=master)](https://travis-ci.org/amire80/commons_upload)
-[![Gem Version](https://badge.fury.io/rb/commons_upload.svg)](https://badge.fury.io/rb/commons_upload)
